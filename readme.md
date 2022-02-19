@@ -8,7 +8,7 @@
 - Change database settings in .env
 - Log in to your server, change to DocRoot of server
 - Execute composer install
-- Execute migrations (bin/console d:m:m)
+- Execute migrations (bin/console d\:m\:m)
 - Make sure to change DocRoot pointing to public folder or use {Domain}/public
 
 #### Install Easy Admin for Symfony 5
