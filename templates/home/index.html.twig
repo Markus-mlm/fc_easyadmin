@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="container-fluid">
+        <div class="container mt-3 pt-3 bg-light min-vh-100">
+            <h3 class="text-info text-uppercase font-weight-bolder text-center">Menükarte</h3>
+            <table class="table-borderless table-striped mt-3 w-100">
+                <tr class="bg-info">
+                    <th scope="col" class="table-head p-2 w-50">Gericht</th>
+                    <th scope="col" class="table-head p-2 w-25">Art</th>
+                    <th scope="col" class="table-head p-2 w-25 text-right">Preis</th>
+                </tr>
+                {% for item in menue %}
+                <tr>
+                    <td class="p-2">{{ item.name }}</td>
+                    <td class="p-2">{{ item.kind }}</td>
+                    <td class="p-2 text-right">{{ item.price|number_format(2, ',', '.') }} €</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 {% endblock %}
