@@ -7,15 +7,51 @@
             <table class="table-borderless table-striped mt-3 w-100">
                 <tr class="bg-info">
                     <th scope="col" class="table-head p-2 w-50">Gericht</th>
-                    <th scope="col" class="table-head p-2 w-25">Art</th>
-                    <th scope="col" class="table-head p-2 w-25 text-right">Preis</th>
+                    <th scope="col" class="table-head p-2 w-50 text-right">Preis</th>
+                </tr>
+                <tr>
+                    <td colspan="3" class="p-3 font-weight-bold text-center text-dark bg-white">Vorspeise</td>
                 </tr>
                 {% for item in menue %}
+                    {% if item.kind == "Vorspeise" %}
+                        <tr>
+                            <td class="p-2">{{ item.name }}</td>
+                            <td class="p-2 text-right">{{ item.price|number_format(2, ',', '.') }} €</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
                 <tr>
-                    <td class="p-2">{{ item.name }}</td>
-                    <td class="p-2">{{ item.kind }}</td>
-                    <td class="p-2 text-right">{{ item.price|number_format(2, ',', '.') }} €</td>
+                    <td colspan="3" class="p-3 font-weight-bold text-center text-dark bg-white">Hauptspeise</td>
                 </tr>
+                {% for item in menue %}
+                    {% if item.kind == "Hauptspeise" %}
+                        <tr>
+                            <td class="p-2">{{ item.name }}</td>
+                            <td class="p-2 text-right">{{ item.price|number_format(2, ',', '.') }} €</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <td colspan="3" class="p-3 font-weight-bold text-center text-dark bg-white">Nachspeise</td>
+                </tr>
+                {% for item in menue %}
+                    {% if item.kind == "Nachspeise" %}
+                        <tr>
+                            <td class="p-2">{{ item.name }}</td>
+                            <td class="p-2 text-right">{{ item.price|number_format(2, ',', '.') }} €</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <td colspan="3" class="p-3 font-weight-bold text-center text-dark bg-white">Beilage</td>
+                </tr>
+                {% for item in menue %}
+                    {% if item.kind == "Beilage" %}
+                        <tr>
+                            <td class="p-2">{{ item.name }}</td>
+                            <td class="p-2 text-right">{{ item.price|number_format(2, ',', '.') }} €</td>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
             </table>
         </div>
