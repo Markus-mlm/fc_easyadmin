@@ -15,3 +15,5 @@
 - composer require easycorp/easyadmin-bundle:^3
 - bin/console make:admin:dashboard
 - Easy Admin is available under {Domain}/admin oder {Domain}/public/admin
+
+This repository has an easy admin branch where easy admin is already installed
